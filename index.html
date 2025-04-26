@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dara Employment Agency, LLC</title>
+    <title>Dara Employment Agency LLC</title>
     <style>
-        /* CSS Styles */
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,14 +15,13 @@
         }
 
         header {
-            background-color: red;
+            background-color: #333;
             color: white;
             padding: 20px 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-radius:20px;        
         }
 
         nav ul {
@@ -153,6 +152,10 @@
             cursor: pointer;
             font-size: 1.1em;
             transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         form button:hover {
@@ -160,7 +163,7 @@
         }
 
         footer {
-            background-color: red;
+            background-color: #333;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -169,6 +172,42 @@
 
         footer p {
             margin: 0;
+        }
+
+        /* Form Feedback */
+        .form-feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .success {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Spinner */
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Responsive Design */
@@ -205,19 +244,19 @@
     <!-- Home Section -->
     <section id="home">
         <div class="hero">
-            <h1>Dara Employment Agency, LLC</h1>
+            <h1>Dara Employment Agency LLC</h1>
             <p>A Startup with a Big Mission: Helping Businesses Grow Through Smart, Effective Staffing Solutions</p>
         </div>
     </section>
 
     <!-- About Us Section -->
     <section id="about">
-        <h2>About Dara Employment Agency, LLC</h2>
+        <h2>About Dara Employment Agency LLC</h2>
         <p>
-            Dara Employment Agency, LLC is a forward-thinking staffing firm focused on providing innovative solutions to meet the needs of modern businesses. As a startup, we understand the ever-evolving challenges companies face in a fast-paced, dynamic labor market. Our agency was founded with a mission to bridge the gap between businesses and talented workers, offering high-quality staffing services to help organizations thrive.
+            Dara Employment Agency LLC is a forward-thinking staffing firm focused on providing innovative solutions to meet the needs of modern businesses. As a startup, we understand the ever-evolving challenges companies face in a fast-paced, dynamic labor market. Our agency was founded with a mission to bridge the gap between businesses and talented workers, offering high-quality staffing services to help organizations thrive.
         </p>
         <p>
-            With an emphasis on responsiveness, professionalism, and compliance, Dara Employment Agency, LLC is dedicated to addressing the workforce challenges that companies face today. We specialize in temporary staffing, direct hire, and Employer of Record (EOR) services, which allow our clients to stay agile and competitive in the face of changing market conditions.
+            With an emphasis on responsiveness, professionalism, and compliance, Dara Employment Agency LLC is dedicated to addressing the workforce challenges that companies face today. We specialize in temporary staffing, direct hire, and Employer of Record (EOR) services, which allow our clients to stay agile and competitive in the face of changing market conditions.
         </p>
         <p>
             Our strength lies in our commitment to understanding each business's unique needs and providing tailored solutions that make a real impact. We build lasting partnerships by offering a personalized approach to staffing, helping companies achieve their growth objectives with the right talent at the right time.
@@ -236,17 +275,99 @@
         
         <h3>Addressing Market Challenges</h3>
         <p>
-            In today's workforce environment, companies face a variety of challenges. Tight labor markets, rising wages, and limited recruiting resources make it harder to find qualified workers. More and more companies are turning to temporary staffing to fill critical gaps in their workforce. Dara Employment Agency, LLC helps businesses navigate these challenges by providing smart staffing solutions that reduce risk, improve efficiency, and drive growth.
+            In today's workforce environment, companies face a variety of challenges. Tight labor markets, rising wages, and limited recruiting resources make it harder to find qualified workers. More and more companies are turning to temporary staffing to fill critical gaps in their workforce. Dara Employment Agency LLC helps businesses navigate these challenges by providing smart staffing solutions that reduce risk, improve efficiency, and drive growth.
         </p>
 
-        <!-- [Rest of your services content exactly as you have it] -->
-        
+        <h3>Key Essentials for Effective Staffing</h3>
+        <p>
+            To ensure success, a staffing partnership needs a few key essentials:
+        </p>
+        <ul>
+            <li><strong>Industry Knowledge:</strong> We understand the nuances of different industries and tailor our solutions accordingly.</li>
+            <li><strong>Compliance Expertise:</strong> Our team ensures that all legal and regulatory standards are met, minimizing risks for your business.</li>
+            <li><strong>Rapid Deployment:</strong> We help you find the right candidates quickly, reducing downtime and keeping your business moving.</li>
+            <li><strong>Customer-Centric Approach:</strong> We take the time to understand your needs and culture to provide the best staffing fit.</li>
+        </ul>
+
+        <h3>Dara's Strengths</h3>
+        <p>
+            At Dara Employment Agency, our strengths are built on providing exceptional service that addresses real business challenges. We specialize in:
+        </p>
+        <ul>
+            <li><strong>Industry Expertise:</strong> With in-depth knowledge of multiple industries, we're able to provide workers that meet your specific requirements.</li>
+            <li><strong>Compliance Leadership:</strong> We prioritize compliance, ensuring your business stays ahead of labor law changes and workforce regulations.</li>
+            <li><strong>Customized Staffing Solutions:</strong> We don't use a one-size-fits-all approach; instead, we craft tailored strategies that align with your goals and culture.</li>
+        </ul>
+
+        <h3>Client Benefits</h3>
+        <p>
+            Partnering with Dara Employment Agency brings a wide range of benefits, such as:
+        </p>
+        <ul>
+            <li><strong>Quick Access to Talent:</strong> We fill positions quickly with qualified candidates ready to contribute immediately.</li>
+            <li><strong>Reduced Turnover:</strong> By focusing on the best fit for both your business and the candidate, we help you reduce turnover rates.</li>
+            <li><strong>Growth Opportunities:</strong> As your staffing partner, we enable you to scale your business with the right people at the right time.</li>
+        </ul>
+
+        <h3>A Unique and Effective Staffing Partner</h3>
+        <p>
+            As a unique staffing partner, Dara Employment Agency helps you:
+        </p>
+        <ul>
+            <li><strong>Build High-Functioning Teams:</strong> We identify top performers and bring them together to form cohesive, productive teams.</li>
+            <li><strong>Personalized Service:</strong> Everything we do is customized to your business needs, ensuring you get the best results.</li>
+            <li><strong>Tailored Workforce Strategies:</strong> We develop specific strategies for each client, ensuring alignment with your business objectives.</li>
+            <li><strong>Reduced Risk:</strong> We help mitigate risks associated with contingent labor, ensuring your business stays compliant and secure.</li>
+        </ul>
+
+        <h3>A Top-Tier Provider of Temporary Staffing Services</h3>
+        <p>
+            Even as a young startup, Dara Employment Agency LLC aims to be a leader in staffing services:
+        </p>
+        <ul>
+            <li><strong>Superior Service:</strong> We are committed to delivering top-tier service that exceeds industry standards.</li>
+            <li><strong>Proven Results:</strong> Our track record speaks for itself, with numerous clients benefiting from our staffing expertise.</li>
+            <li><strong>Client Satisfaction:</strong> We consistently achieve high levels of satisfaction, with 100% of our clients expressing their complete satisfaction with our services.</li>
+        </ul>
+
+        <h3>Comprehensive Employer of Record (EOR) Services</h3>
+        <ul>
+            <li><strong>End-to-End Management:</strong> We handle the entire process, from recruitment and onboarding to payroll and benefits administration.</li>
+            <li><strong>Flexible Worker Engagement:</strong> Our EOR services provide flexibility in engaging freelance, contract, and project-based workers.</li>
+            <li><strong>Risk Assessment:</strong> We assess workforce risks and offer recommendations for managing those risks effectively.</li>
+            <li><strong>Compliance Support:</strong> We ensure that contingent workers are managed in line with the latest labor laws and regulations.</li>
+            <li><strong>Workforce Management:</strong> Our compliance team ensures your workforce is managed efficiently, saving you time and resources.</li>
+        </ul>
+
+        <h3>Direct Hire Staffing Services</h3>
+        <ul>
+            <li><strong>Fast and Efficient:</strong> We fill permanent positions quickly and reduce the time it takes for you to hire the right people.</li>
+            <li><strong>Support for Key Hires:</strong> We assist with placing critical positions within your company, from entry-level to executive roles.</li>
+        </ul>
+
+        <h3>Interim Staffing Solutions: Reducing Business Risks</h3>
+        <ul>
+            <li><strong>Managing Vacancy Costs:</strong> We help reduce the high cost of vacancies by providing interim staffing that keeps your operations running smoothly.</li>
+            <li><strong>More Than Just a Quick Fix:</strong> Our interim staffing solutions are designed to maintain continuity and protect company culture.</li>
+            <li><strong>Workload Management:</strong> Interim staff helps to balance workloads and ensures that your core staff can focus on their main tasks.</li>
+        </ul>
+
+        <h3>Wide Range of Positions We Help Fill</h3>
+        <ul>
+            <li><strong>Administrative & Clerical:</strong> We specialize in sourcing top talent for administrative, clerical, and office management roles.</li>
+            <li><strong>Manufacturing & Distribution:</strong> We recruit for industries that require skilled workers in manufacturing, logistics, and distribution.</li>
+        </ul>
+
+        <h3>Proven Results</h3>
+        <p>
+            With thousands of successful placements and a growing client base, Dara Employment Agency LLC has established a strong reputation for delivering quality staffing solutions that drive business success.
+        </p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form action="https://formsubmit.co/dara1812d@gmail.com" method="POST">
+        <form id="contactForm" action="https://formsubmit.co/daradea0425@gmail.com" method="POST">
             <label for="name">Contact Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -263,83 +384,125 @@
             <textarea id="message" name="message" rows="5" required></textarea>
 
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+            <input type="hidden" name="_next" value="#contact">
 
-            <button type="submit">Send Message</button>
+            <button type="submit" id="submitBtn">
+                <span class="spinner" id="spinner" style="display: none;"></span>
+                <span id="buttonText">Send Message</span>
+            </button>
+            
+            <div id="formFeedback" class="form-feedback" style="display: none;"></div>
         </form>
 
-        <p style="text-align: center; margin-top: 20px;">If you prefer, you can reach us directly at:<br>
-            <strong>Office:(508) 892-5038<br>
-            Cell:(774)810-4373<br>
-        Cell:(508)797-2783<br>
-        Email:daradea0425@!gmail.com
-    </strong>
-    </p>
+        <p style="text-align: center; margin-top: 20px;">If you prefer, you can reach us directly at: <strong>(123) 456-7890</strong></p>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Dara Employment Agency, LLC. All rights reserved.</p>
+        <p>&copy; 2025 Dara Employment Agency LLC. All rights reserved.</p>
     </footer>
 
     <script>
-        // JavaScript
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const buttonText = document.getElementById('buttonText');
+            const spinner = document.getElementById('spinner');
+            const formFeedback = document.getElementById('formFeedback');
+
+            // Real-time validation
+            contactForm.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '#ccc';
+                    }
                 });
             });
 
-            // Form validation
-            const contactForm = document.querySelector('form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    // Basic validation
-                    const requiredFields = ['name', 'company', 'email', 'phone', 'message'];
-                    let isValid = true;
-                    
-                    requiredFields.forEach(field => {
-                        const element = document.getElementById(field);
-                        if (!element.value.trim()) {
-                            element.style.borderColor = 'red';
-                            isValid = false;
-                        } else {
-                            element.style.borderColor = '#ccc';
+            // Form submission
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validate form first
+                if (!validateForm()) {
+                    return;
+                }
+
+                // Show loading state
+                submitBtn.disabled = true;
+                spinner.style.display = 'inline-block';
+                buttonText.textContent = 'Sending...';
+                formFeedback.style.display = 'none';
+
+                try {
+                    // Create FormData
+                    const formData = new FormData(contactForm);
+                    formData.append('_timestamp', Date.now());
+
+                    // Submit using Fetch API
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
                         }
                     });
 
-                    if (!isValid) {
-                        e.preventDefault();
-                        alert('Please fill out all required fields.');
+                    if (response.ok) {
+                        showFeedback('Message sent successfully! We will contact you soon.', 'success');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    showFeedback('There was a problem sending your message. Please try again or call us directly.', 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    spinner.style.display = 'none';
+                    buttonText.textContent = 'Send Message';
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                const requiredFields = ['name', 'company', 'email', 'phone', 'message'];
+                
+                // Reset feedback
+                formFeedback.style.display = 'none';
+
+                // Validate required fields
+                requiredFields.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (!element.value.trim()) {
+                        element.style.borderColor = 'red';
+                        isValid = false;
                     }
                 });
+
+                // Validate email format
+                const email = document.getElementById('email').value;
+                if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById('email').style.borderColor = 'red';
+                    showFeedback('Please enter a valid email address', 'error');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    showFeedback('Please fill all required fields correctly', 'error');
+                }
+                
+                return isValid;
             }
 
-            // Add animation when scrolling to sections
-            const observerOptions = {
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('section').forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(section);
-            });
+            function showFeedback(message, type) {
+                formFeedback.textContent = message;
+                formFeedback.className = `form-feedback ${type}`;
+                formFeedback.style.display = 'block';
+                
+                // Scroll to feedback if needed
+                formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         });
     </script>
 </body>

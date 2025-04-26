@@ -15,13 +15,15 @@
         }
 
         header {
-            background-color: #333;
+            background-color: redf;
             color: white;
             padding: 20px 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            border-radius:20px;
+            
         }
 
         nav ul {
@@ -163,11 +165,12 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #red;
             color: white;
             padding: 20px 0;
             text-align: center;
             margin-top: 40px;
+            border-radius:20px;
         }
 
         footer p {
@@ -367,7 +370,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formsubmit.co/daradea0425@gmail.com" method="POST">
+        <form id="contactForm" action="https://formsubmit.co/dara1812d@gmail.com" method="POST">
             <label for="name">Contact Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -394,12 +397,17 @@
             <div id="formFeedback" class="form-feedback" style="display: none;"></div>
         </form>
 
-        <p style="text-align: center; margin-top: 20px;">If you prefer, you can reach us directly at: <strong>(123) 456-7890</strong></p>
+        <p style="text-align: center; margin-top: 20px;">If you prefer, you can reach us directly at:<br>
+            <strong>Office:(508) 892-5038<br>
+            Cell:(774)810-4373<br>
+        Cell:(508)797-2783<br>
+        Email:daradea0425@!gmail.com
+    </strong></p>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Dara Employment Agency LLC. All rights reserved.</p>
+        <p>&copy; 2025 Dara Employment Agency, LLC. All rights reserved.</p>
     </footer>
 
     <script>
@@ -449,7 +457,7 @@
                     });
 
                     if (response.ok) {
-                        showFeedback('Message sent successfully! We will contact you soon.', 'success');
+                        showFeedback('Message sent successfully! We will contact you soon. Thank you so much for contacting us!', 'success');
                         contactForm.reset();
                     } else {
                         throw new Error('Form submission failed');

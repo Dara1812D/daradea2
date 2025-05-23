@@ -886,6 +886,7 @@
     </section>
 
     <!-- Application Section -->
+
 <!-- Application Section -->
 <section class="section application-form" id="application">
   <div class="container">
@@ -900,7 +901,7 @@
         <input type="hidden" name="_subject" value="New Job Application from Dara Employment Website">
         <input type="hidden" name="_autoresponse" value="Thank you for your application to Dara Employment Agency. We have received your information and will review it shortly. If you are a good match for any current openings, we will contact you soon.">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="dara1812d.github.io/daradea2/?success=true#application">
+        <input type="hidden" name="_next" value="https://dara1812d.github.io/daradea2/thanks.html">
         <input type="hidden" name="_captcha" value="false">
         
         <!-- Form Fields -->
@@ -979,6 +980,8 @@
     </div>
   </div>
 </section>
+
+    
 <!-- Contact Section -->
 <section class="section contact" id="contact">
   <div class="container">
@@ -1112,12 +1115,13 @@
 </footer>
 
 <!-- JavaScript -->
-    <script>
+<script>
 // Form handling for job application
 document.addEventListener('DOMContentLoaded', function() {
   const jobForm = document.getElementById('job-application-form');
   const positionSelect = document.getElementById('position');
   const otherPositionContainer = document.getElementById('other-position-container');
+  const formStatus = document.getElementById('form-status');
 
   // Toggle "Other" position field
   if (positionSelect && otherPositionContainer) {
@@ -1129,24 +1133,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Check for successful submission
-  const urlParams = new URLSearchParams(window.location.search);
-  const formStatus = document.getElementById('form-status');
-
-  if (urlParams.has('success') && urlParams.get('success') === 'true') {
-    formStatus.innerHTML = `
-      <div class="status-message success">
-        <h3>Application Submitted Successfully!</h3>
-        <p>Thank you for your application. We'll review your information and contact you soon.</p>
-      </div>
-    `;
-    // Clear the success parameter from URL
-    window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
-  }
-
   // Form submission handler
   if (jobForm) {
     jobForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission
+      
       const submitBtn = document.getElementById('submit-btn');
       const originalBtnText = submitBtn.innerHTML;
       
@@ -1154,9 +1145,53 @@ document.addEventListener('DOMContentLoaded', function() {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       
-      // Clear previous status messages
+      // Show sending status
       formStatus.innerHTML = '<div class="status-message sending"><p>Submitting your application...</p></div>';
+      
+      // Create a new FormData object
+      const formData = new FormData(jobForm);
+      
+      // Send the form data using fetch
+      fetch(jobForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          formStatus.innerHTML = `
+            <div class="status-message success">
+              <h3>Application Submitted Successfully!</h3>
+              <p>Thank you for your application. We'll review your information and contact you soon.</p>
+            </div>
+          `;
+          // Reset the form
+          jobForm.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(error => {
+        // Show error message
+        formStatus.innerHTML = `
+          <div class="status-message error">
+            <h3>Error Submitting Application</h3>
+            <p>There was a problem submitting your application. Please try again or contact us directly.</p>
+          </div>
+        `;
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
     });
+  }
+});
 </script>
 </body>
 </html>

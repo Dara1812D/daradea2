@@ -3,523 +3,1243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dara Employment Agency, LLC</title>
+    <title>Dara Employment Agency | Professional Staffing Solutions</title>
+    <meta name="description" content="Dara Employment Agency provides premier staffing solutions including temporary, direct hire, and employer of record services across multiple industries.">
+    <link rel="icon" href="dea_red_favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-blue: #0033A0;
+            --primary-red: #B22222;
+            --secondary-blue: #2c7be5;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --text-color: #495057;
+            --white: #ffffff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f4f4f9;
         }
 
-        header {
-            
-            background-color: red;
-            opacity: 0.6
-;           
-            padding: 20px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-radius:20px;
-            
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #007bff;
-        }
-
-        section {
-            padding: 60px 40px;
-            margin: 20px auto;
-            max-width: 1200px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero {
-               text-align: center;
-            margin-bottom: 40px;
-                padding: 50px 20px;
-          background-image: 
-            
-            url(https://as1.ftcdn.net/v2/jpg/01/54/95/10/1000_F_154951004_jcAiimvlZLnjvbHtBb5bsQ50SLENMShw.jpg);        opacity: 0.8;
-  color: red;
-  border-radius: 8px;
-  
-  text-shadow: 8px 8px 10px black;  
-  background-blend-mode: overlay;   
-  padding: 20px;   
-  border-radius: 10px;        }
-
-        .hero h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
-        }
-ui{
-  
-  font-size:4em;
-}        
-
-        .hero p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        #about {
-            background-color: #e9ecef;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            font-size: 1.6em;
-            margin-top: 30px;
-            color: #444;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
         }
 
         p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 1.25rem;
         }
 
-        ul {
-            padding-left: 20px;
+        a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            transition: var(--transition);
         }
 
-        li {
-            margin-bottom: 10px;
-            line-height: 1.5;
+        a:hover {
+            color: var(--primary-red);
         }
 
-        strong {
-            color: #007bff;
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
-        #contact {
-            background-color: #f8f9fa;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
+        .container {
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        form label {
-            margin-bottom: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
+        .section {
+            padding: 80px 0;
         }
 
-        form input, form textarea {
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-            transition: border 0.3s;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
         }
 
-        form input:focus, form textarea:focus {
-            border-color: #007bff;
-            outline: none;
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-red);
+            margin: 20px auto 0;
         }
 
-        form button {
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-blue);
+            color: var(--white);
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary-blue);
+        }
+
+        .logo-text span {
+            color: var(--primary-red);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            color: var(--dark-gray);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--white);
+            transform: skewY(-3deg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 2.5rem;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Positions Section */
+        .positions {
+            background-color: var(--white);
+        }
+
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .position-category {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .position-category h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .position-list {
+            list-style: none;
+        }
+
+        .position-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .position-list li:before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-red);
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        /* Hiring Banner */
+        .hiring-banner {
+            background: linear-gradient(135deg, var(--primary-red), #d63333);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .hiring-banner h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hiring-banner .btn {
+            background: var(--white);
+            color: var(--primary-red);
+            margin-top: 20px;
+        }
+
+        .hiring-banner .btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Application Form Section */
+        .application-form {
+            background-color: var(--light-gray);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 51, 160, 0.1);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-details li i {
+            color: var(--primary-red);
+            margin-right: 15px;
+            font-size: 20px;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-red);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--medium-gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-        }
-
-        form button:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: red;
-            color: white;
-            padding: 20px ;
-            text-align: center;
-            margin-top: 40px;
-            border-radius:20px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Form Feedback */
-        .form-feedback {
-            margin-top: 15px;
-            font-weight: bold;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .success {
-            color: #155724;
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-        }
-
-        .error {
-            color: #721c24;
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-        }
-
-        /* Spinner */
-        .spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255,255,255,.3);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
+            color: var(--white);
+            transition: var(--transition);
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .social-links a:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
         }
 
-        /* Responsive Design */
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            nav ul li {
+            .nav-toggle {
                 display: block;
-                margin: 10px 0;
             }
             
-            section {
-                padding: 40px 20px;
-                margin: 10px;
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                box-shadow: var(--box-shadow);
+                transition: var(--transition);
+                z-index: 999;
             }
             
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 30px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
             .hero {
-                padding: 60px 15px;
+                padding: 150px 0 80px;
             }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Status messages */
+        .status-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .status-message.sending {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196F3;
+            color: #0d47a1;
+        }
+
+        .status-message.success {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+            color: #2E7D32;
+        }
+
+        .status-message.error {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+            color: #c62828;
+        }
+
+        .status-message h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .status-message p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Section -->
+    <!-- Header -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="dea_red_favicon.png" alt="Dara Employment Agency Logo">
+                <div class="logo-text">Dara <span>Employment</span></div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#positions">Positions</a></li>
+                    <li><a href="#application">Apply Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Home Section -->
-    <section id="home">
-        <div class="hero">
- <ui>DEA</ui>            
-            <h1>Dara Employment Agency, LLC</h1>
-            <p>A Startup with a Big Mission: Helping Businesses Grow Through Smart, Effective Staffing Solutions</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Strategic Staffing Solutions for Growing Businesses</h1>
+            <p>Dara Employment Agency connects top talent with leading companies through temporary staffing, direct hire, and comprehensive employer of record services.</p>
+            <div class="hero-btns">
+                <a href="#application" class="btn">Apply for Jobs</a>
+                <a href="#contact" class="btn btn-outline">Contact Our Team</a>
+            </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <h2>About Dara Employment Agency, LLC</h2>
-        <p>
-            Dara Employment Agency, LLC is a forward-thinking staffing firm focused on providing innovative solutions to meet the needs of modern businesses. As a startup, we understand the ever-evolving challenges companies face in a fast-paced, dynamic labor market. Our agency was founded with a mission to bridge the gap between businesses and talented workers, offering high-quality staffing services to help organizations thrive.
-        </p>
-        <p>
-            With an emphasis on responsiveness, professionalism, and compliance, Dara Employment Agency, LLC is dedicated to addressing the workforce challenges that companies face today. We specialize in temporary staffing, direct hire, and Employer of Record (EOR) services, which allow our clients to stay agile and competitive in the face of changing market conditions.
-        </p>
-        <p>
-            Our strength lies in our commitment to understanding each business's unique needs and providing tailored solutions that make a real impact. We build lasting partnerships by offering a personalized approach to staffing, helping companies achieve their growth objectives with the right talent at the right time.
-        </p>
-        <p>
-            At Dara Employment Agency(DEA), we pride ourselves on our industry expertise, our deep knowledge of compliance regulations, and our focus on long-term relationships with both clients and workers. Whether you need to fill a short-term gap, hire key personnel, or outsource the management of contingent workers, we are your trusted partner for workforce solutions.
-        </p>
-        <p>
-            Our agency's vision is to be a top-tier provider of staffing services across a range of industries, offering businesses a competitive edge through effective workforce solutions. We are driven by the belief that the right people are key to achieving success, and we aim to match top talent with the best companies to create powerful, high-performing teams.
-        </p>
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Dara Employment Agency</h2>
+                <p>Your trusted partner for workforce solutions</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded on principles of integrity and excellence, Dara Employment Agency, LLC specializes in providing businesses with strategic staffing solutions tailored to today's dynamic labor market. We understand the challenges companies face in finding and retaining qualified talent.</p>
+                    
+                    <p>Our comprehensive approach combines industry expertise with innovative staffing models to deliver results. Whether you need temporary workers to manage seasonal demands, direct hires for critical positions, or complete workforce management through our Employer of Record services, we provide customized solutions.</p>
+                    
+                    <p>What sets us apart is our commitment to compliance, rigorous candidate vetting process, and dedication to understanding each client's unique needs. We don't just fill positions—we build teams that drive business success.</p>
+                    
+                    <h3>Our Core Values</h3>
+                    <ul>
+                        <li><strong>Integrity:</strong> We operate with honesty and transparency in all our relationships</li>
+                        <li><strong>Excellence:</strong> We strive for the highest standards in service and results</li>
+                        <li><strong>Innovation:</strong> We develop creative solutions to workforce challenges</li>
+                        <li><strong>Partnership:</strong> We work collaboratively with clients and candidates</li>
+                    </ul>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Dara Employment Agency Team">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        
-        <h3>Addressing Market Challenges</h3>
-        <p>
-            In today's workforce environment, companies face a variety of challenges. Tight labor markets, rising wages, and limited recruiting resources make it harder to find qualified workers. More and more companies are turning to temporary staffing to fill critical gaps in their workforce. Dara Employment Agency LLC helps businesses navigate these challenges by providing smart staffing solutions that reduce risk, improve efficiency, and drive growth.
-        </p>
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Comprehensive Services</h2>
+                <p>Tailored workforce solutions for your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Employer of Record (EOR)</h3>
+                        <p>Our comprehensive EOR service handles all employment responsibilities including payroll, benefits, taxes, and compliance, allowing you to focus on your core business while we manage the administrative burden.</p>
+                        <ul>
+                            <li>Full payroll and tax administration</li>
+                            <li>Benefits and workers' compensation</li>
+                            <li>Compliance with labor laws</li>
+                            <li>Risk mitigation and liability protection</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Direct Hire Staffing</h3>
+                        <p>We identify and recruit top talent for permanent positions within your organization, using our extensive networks and rigorous screening processes to find candidates who align with your company culture and requirements.</p>
+                        <ul>
+                            <li>Executive and professional search</li>
+                            <li>Industry-specific recruitment</li>
+                            <li>Cultural fit assessment</li>
+                            <li>Reduced time-to-hire</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Temporary Staffing</h3>
+                        <p>Our flexible temporary staffing solutions help you manage workload fluctuations, seasonal demands, and special projects with qualified professionals available on short notice.</p>
+                        <ul>
+                            <li>Short-term and long-term assignments</li>
+                            <li>Specialized project teams</li>
+                            <li>Seasonal workforce solutions</li>
+                            <li>Reduced overtime costs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>Key Essentials for Effective Staffing</h3>
-        <p>
-            To ensure success, a staffing partnership needs a few key essentials:
-        </p>
-        <ul>
-            <li><strong>Industry Knowledge:</strong> We understand the nuances of different industries and tailor our solutions accordingly.</li>
-            <li><strong>Compliance Expertise:</strong> Our team ensures that all legal and regulatory standards are met, minimizing risks for your business.</li>
-            <li><strong>Rapid Deployment:</strong> We help you find the right candidates quickly, reducing downtime and keeping your business moving.</li>
-            <li><strong>Customer-Centric Approach:</strong> We take the time to understand your needs and culture to provide the best staffing fit.</li>
-        </ul>
+    <!-- Positions Section -->
+    <section class="section positions" id="positions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Positions We Fill</h2>
+                <p>Connecting skilled professionals with leading employers</p>
+            </div>
+            
+            <div class="positions-grid">
+                <div class="position-category">
+                    <h3>Manufacturing</h3>
+                    <ul class="position-list">
+                        <li>Assembly Line Workers</li>
+                        <li>Machine Operators</li>
+                        <li>Quality Control Inspectors</li>
+                        <li>Production Supervisors</li>
+                        <li>Welders & Fabricators</li>
+                        <li>CNC Machinists</li>
+                    </ul>
+                </div>
+                
+                <div class="position-category">
+                    <h3>Warehouse & Logistics</h3>
+                    <ul class="position-list">
+                        <li>Forklift Operators</li>
+                        <li>Order Pickers/Packers</li>
+                        <li>Shipping/Receiving Clerks</li>
+                        <li>Inventory Specialists</li>
+                        <li>Material Handlers</li>
+                        <li>Distribution Managers</li>
+                    </ul>
+                </div>
+                
+                <div class="position-category">
+                    <h3>Administrative</h3>
+                    <ul class="position-list">
+                        <li>Data Entry Clerks</li>
+                        <li>Office Administrators</li>
+                        <li>Customer Service Reps</li>
+                        <li>Executive Assistants</li>
+                        <li>Accounting Clerks</li>
+                        <li>HR Coordinators</li>
+                    </ul>
+                </div>
+                
+                <div class="position-category">
+                    <h3>Skilled Trades</h3>
+                    <ul class="position-list">
+                        <li>Electricians</li>
+                        <li>Plumbers</li>
+                        <li>HVAC Technicians</li>
+                        <li>Carpenters</li>
+                        <li>Maintenance Technicians</li>
+                        <li>Industrial Mechanics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>DEA's Strengths</h3>
-        <p>
-            At Dara Employment Agency, our strengths are built on providing exceptional service that addresses real business challenges. We specialize in:
-        </p>
-        <ul>
-            <li><strong>Industry Expertise:</strong> With in-depth knowledge of multiple industries, we're able to provide workers that meet your specific requirements.</li>
-            <li><strong>Compliance Leadership:</strong> We prioritize compliance, ensuring your business stays ahead of labor law changes and workforce regulations.</li>
-            <li><strong>Customized Staffing Solutions:</strong> We don't use a one-size-fits-all approach; instead, we craft tailored strategies that align with your goals and culture.</li>
-        </ul>
+    <!-- Hiring Banner -->
+    <section class="hiring-banner">
+        <div class="container">
+            <h2>Now Hiring for Multiple Positions!</h2>
+            <p>We're seeking reliable, hardworking individuals for immediate openings in manufacturing, warehouse, and administrative roles.</p>
+            <a href="#application" class="btn">Apply Now</a>
+        </div>
+    </section>
 
-        <h3>Client Benefits</h3>
-        <p>
-            Partnering with Dara Employment Agency(DEA) brings a wide range of benefits, such as:
-        </p>
-        <ul>
-            <li><strong>Quick Access to Talent:</strong> We fill positions quickly with qualified candidates ready to contribute immediately.</li>
-            <li><strong>Reduced Turnover:</strong> By focusing on the best fit for both your business and the candidate, we help you reduce turnover rates.</li>
-            <li><strong>Growth Opportunities:</strong> As your staffing partner, we enable you to scale your business with the right people at the right time.</li>
-        </ul>
+    <!-- Application Form Section -->
+    <section class="section application-form" id="application">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Talent Network</h2>
+                <p>Start your journey with Dara Employment Agency today</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="download-option">
+                    <p><strong>Option 1:</strong> Download and complete our application form:</p>
+                    <a href="https://pdfhost.io/v/RRv2vckBtx_DEAform-2" download class="btn" style="margin-bottom: 30px;">
+                        <i class="fas fa-download"></i> Download Application Form
+                    </a>
+                    <p>Email completed forms to: <strong>daradea0425@gmail.com</strong></p>
+                </div>
+                
+                <div class="divider" style="text-align: center; margin: 30px 0; position: relative;">
+                    <span style="background: var(--white); padding: 0 15px; position: relative; z-index: 1;">OR</span>
+                    <hr style="position: absolute; top: 50%; left: 0; right: 0; margin: 0; border: none; height: 1px; background: var(--medium-gray); z-index: 0;">
+                </div>
+                
+                <p><strong>Option 2:</strong> Complete our online application below:</p>
+                
+                <form id="job-application-form" method="POST">
+                    <input type="hidden" name="_subject" value="New Job Application - Dara Employment Agency">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                    <input type="hidden" name="_captcha" value="false">
 
-        <h3>A Unique and Effective Staffing Partner</h3>
-        <p>
-            As a unique staffing partner, Dara Employment Agency,LLC(DEA) helps you:
-        </p>
-        <ul>
-            <li><strong>Build High-Functioning Teams:</strong> We identify top performers and bring them together to form cohesive, productive teams.</li>
-            <li><strong>Personalized Service:</strong> Everything we do is customized to your business needs, ensuring you get the best results.</li>
-            <li><strong>Tailored Workforce Strategies:</strong> We develop specific strategies for each client, ensuring alignment with your business objectives.</li>
-            <li><strong>Reduced Risk:</strong> We help mitigate risks associated with contingent labor, ensuring your business stays compliant and secure.</li>
-        </ul>
-
-        <h3>A Top-Tier Provider of Temporary Staffing Services</h3>
-        <p>
-            Even as a young startup, Dara Employment Agency, LLC aims to be a leader in staffing services:
-        </p>
-        <ul>
-            <li><strong>Superior Service:</strong> We are committed to delivering top-tier service that exceeds industry standards.</li>
-            <li><strong>Proven Results:</strong> Our track record speaks for itself, with numerous clients benefiting from our staffing expertise.</li>
-            <li><strong>Client Satisfaction:</strong> We consistently achieve high levels of satisfaction, with 100% of our clients expressing their complete satisfaction with our services.</li>
-        </ul>
-
-        <h3>Comprehensive Employer of Record (EOR) Services</h3>
-        <ul>
-            <li><strong>End-to-End Management:</strong> We handle the entire process, from recruitment and onboarding to payroll and benefits administration.</li>
-            <li><strong>Flexible Worker Engagement:</strong> Our EOR services provide flexibility in engaging freelance, contract, and project-based workers.</li>
-            <li><strong>Risk Assessment:</strong> We assess workforce risks and offer recommendations for managing those risks effectively.</li>
-            <li><strong>Compliance Support:</strong> We ensure that contingent workers are managed in line with the latest labor laws and regulations.</li>
-            <li><strong>Workforce Management:</strong> Our compliance team ensures your workforce is managed efficiently, saving you time and resources.</li>
-        </ul>
-
-        <h3>Direct Hire Staffing Services</h3>
-        <ul>
-            <li><strong>Fast and Efficient:</strong> We fill permanent positions quickly and reduce the time it takes for you to hire the right people.</li>
-            <li><strong>Support for Key Hires:</strong> We assist with placing critical positions within your company, from entry-level to executive roles.</li>
-        </ul>
-
-        <h3>Interim Staffing Solutions: Reducing Business Risks</h3>
-        <ul>
-            <li><strong>Managing Vacancy Costs:</strong> We help reduce the high cost of vacancies by providing interim staffing that keeps your operations running smoothly.</li>
-            <li><strong>More Than Just a Quick Fix:</strong> Our interim staffing solutions are designed to maintain continuity and protect company culture.</li>
-            <li><strong>Workload Management:</strong> Interim staff helps to balance workloads and ensures that your core staff can focus on their main tasks.</li>
-        </ul>
-
-        <h3>Wide Range of Positions We Help Fill</h3>
-        <ul>
-            <li><strong>Administrative & Clerical:</strong> We specialize in sourcing top talent for administrative, clerical, and office management roles.</li>
-            <li><strong>Manufacturing & Distribution:</strong> We recruit for industries that require skilled workers in manufacturing, logistics, and distribution.</li>
-        </ul>
-
-       
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="name" class="form-control" required minlength="3">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10,15}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Position Applying For *</label>
+                        <select id="position" name="position" class="form-control" required>
+                            <option value="" disabled selected>Select a position</option>
+                            <option value="Warehouse">Warehouse</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Administrative">Administrative</option>
+                            <option value="Skilled Trade">Skilled Trade</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Years of Relevant Experience *</label>
+                        <select id="experience" name="experience" class="form-control" required>
+                            <option value="" disabled selected>Select experience level</option>
+                            <option value="No experience">No experience</option>
+                            <option value="1-2 years">1-2 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5+ years">5+ years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="availability">Availability *</label>
+                        <select id="availability" name="availability" class="form-control" required>
+                            <option value="" disabled selected>Select availability</option>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Temporary">Temporary</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF or Word)</label>
+                        <input type="file" id="resume" name="resume" class="form-control" accept=".pdf,.doc,.docx">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn" class="btn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
+                    
+                    <div id="form-status" style="margin-top: 20px;"></div>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formsubmit.co/dara1812d@gmail.com" method="POST">
-            <label for="name">Contact Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="company">Your Company Name:</label>
-            <input type="text" id="company" name="company" required>
-
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Your Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="message">Detail your message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="#contact">
-
-            <button type="submit" id="submitBtn">
-                <span class="spinner" id="spinner" style="display: none;"></span>
-                <span id="buttonText">Send Message</span>
-            </button>
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Team</h2>
+                <p>We're here to answer your questions</p>
+            </div>
             
-            <div id="formFeedback" class="form-feedback" style="display: none;"></div>
-        </form>
-
-        <p style="text-align: center; margin-top: 20px;">If you prefer, you can reach us directly at:<br>
-            <strong>Office:(508) 892-5038<br>
-            Cell:(774)810-4373<br>
-        Cell:(508)797-2783<br>
-        Email:daradea0425@!gmail.com
-    </strong></p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Office Locations</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Main Office</strong><br>
+                                123 Business Park Drive<br>
+                                Suite 200<br>
+                                Boston, MA 02110
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Branch Office</strong><br>
+                                456 Industrial Way<br>
+                                Worcester, MA 01605
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h3>Contact Details</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Office:</strong> (508) 619-1906<br>
+                                <strong>Office:</strong> (508) 892-5038
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <strong>Cell:</strong> (774) 810-4373<br>
+                                <strong>Cell:</strong> (508) 797-2783
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong> daradea0425@gmail.com
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Hours:</strong> Monday-Friday 8:00 AM - 5:00 PM
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form action="https://formsubmit.co/daradea0425@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact Us Message">
+                        <input type="hidden" name="_redirect" value="http://yourwebsite.com/thank-you">
+                        
+                        <div class="form-group">
+                            <label for="contact-name">Your Name *</label>
+                            <input type="text" id="contact-name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Dara Employment Agency, LLC. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Dara Employment</h3>
+                    <p>Providing strategic staffing solutions since 2010. We connect top talent with leading employers through innovative workforce solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#positions">Positions</a></li>
+                        <li><a href="#application">Apply Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Employer of Record</a></li>
+                        <li><a href="#">Direct Hire Staffing</a></li>
+                        <li><a href="#">Temporary Staffing</a></li>
+                        <li><a href="#">Payroll Services</a></li>
+                        <li><a href="#">Compliance Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (508) 619-1906</li>
+                        <li><i class="fas fa-envelope"></i> daradea0425@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Boston, MA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Dara Employment Agency, LLC. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const buttonText = document.getElementById('buttonText');
-            const spinner = document.getElementById('spinner');
-            const formFeedback = document.getElementById('formFeedback');
+        // Mobile Navigation Toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            this.innerHTML = this.innerHTML.includes('bars') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
 
-            // Real-time validation
-            contactForm.querySelectorAll('input, textarea').forEach(input => {
-                input.addEventListener('input', function() {
-                    if (this.value.trim()) {
-                        this.style.borderColor = '#ccc';
-                    }
-                });
-            });
-
-            // Form submission
-            contactForm.addEventListener('submit', async function(e) {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                // Validate form first
-                if (!validateForm()) {
-                    return;
-                }
-
-                // Show loading state
-                submitBtn.disabled = true;
-                spinner.style.display = 'inline-block';
-                buttonText.textContent = 'Sending...';
-                formFeedback.style.display = 'none';
-
-                try {
-                    // Create FormData
-                    const formData = new FormData(contactForm);
-                    formData.append('_timestamp', Date.now());
-
-                    // Submit using Fetch API
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                // Close mobile menu if open
+                document.getElementById('mainNav').classList.remove('active');
+                document.getElementById('navToggle').innerHTML = '<i class="fas fa-bars"></i>';
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
-
-                    if (response.ok) {
-                        showFeedback('Message sent successfully! We will contact you as soon as possible. Thank you very much for contacting Dara Employment Agency, LLC (DEA)!', 'success');
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    showFeedback('There was a problem sending your message. Please try again or call us directly.', 'error');
-                } finally {
-                    submitBtn.disabled = false;
-                    spinner.style.display = 'none';
-                    buttonText.textContent = 'Send Message';
                 }
             });
+        });
 
-            function validateForm() {
-                let isValid = true;
-                const requiredFields = ['name', 'company', 'email', 'phone', 'message'];
-                
-                // Reset feedback
-                formFeedback.style.display = 'none';
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function () {
+            const applicationForm = document.getElementById('job-application-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const statusDiv = document.getElementById('form-status');
 
-                // Validate required fields
-                requiredFields.forEach(field => {
-                    const element = document.getElementById(field);
-                    if (!element.value.trim()) {
-                        element.style.borderColor = 'red';
-                        isValid = false;
+            if (applicationForm && submitBtn && statusDiv) {
+                applicationForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    // Client-side validation
+                    if (!applicationForm.checkValidity()) {
+                        statusDiv.innerHTML = `
+                            <div class="status-message error">
+                                <h3>Validation Error</h3>
+                                <p>Please fill out all required fields correctly.</p>
+                            </div>`;
+                        return;
+                    }
+
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    statusDiv.innerHTML = '<div class="status-message sending"><p>Submitting your application...</p></div>';
+
+                    try {
+                        const formData = new FormData(applicationForm);
+
+                        // Submit to FormSubmit.co
+                        const response = await fetch('https://formsubmit.co/ajax/daradea0425@gmail.com', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.success === "true") {
+                            statusDiv.innerHTML = `
+                                <div class="status-message success">
+                                    <h3>Application Submitted!</h3>
+                                    <p>Thank you for applying. We'll contact you soon.</p>
+                                </div>`;
+                            applicationForm.reset();
+                        } else {
+                            throw new Error(result.message || 'Submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Submission Error:', error);
+                        statusDiv.innerHTML = `
+                            <div class="status-message error">
+                                <h3>Submission Error</h3>
+                                <p>Please email your application form directly to daradea0425@gmail.com.</p>
+                                <p>Error: ${error.message}</p>
+                            </div>`;
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
                     }
                 });
-
-                // Validate email format
-                const email = document.getElementById('email').value;
-                if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    document.getElementById('email').style.borderColor = 'red';
-                    showFeedback('Please enter a valid email address', 'error');
-                    isValid = false;
-                }
-
-                if (!isValid) {
-                    showFeedback('Please fill all required fields correctly', 'error');
-                }
-                
-                return isValid;
             }
+        });
 
-            function showFeedback(message, type) {
-                formFeedback.textContent = message;
-                formFeedback.className = `form-feedback ${type}`;
-                formFeedback.style.display = 'block';
-                
-                // Scroll to feedback if needed
-                formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '15px 0';
             }
         });
     </script>

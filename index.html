@@ -895,30 +895,33 @@
     </div>
 
     <div class="form-container">
-      <form id="job-application-form" class="eform" action="https://eform.to/dara-employment-agency" method="POST">
-        <!-- Hidden eForm Fields -->
-        <input type="hidden" name="form_id" value="job_application">
-        <input type="hidden" name="redirect_url" value="?success=true#application">
+      <form id="job-application-form" action="https://formsubmit.co/darathach1812d@gmail.com" method="POST">
+        <!-- FormSubmit.co settings -->
+        <input type="hidden" name="_subject" value="New Job Application from Dara Employment Website">
+        <input type="hidden" name="_autoresponse" value="Thank you for your application to Dara Employment Agency. We have received your information and will review it shortly. If you are a good match for any current openings, we will contact you soon.">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="dara1812d.github.io/daradea2/?success=true#application">
+        <input type="hidden" name="_captcha" value="false">
         
-        <!-- Visible Form Fields -->
+        <!-- Form Fields -->
         <div class="form-group">
           <label for="full-name">Full Name *</label>
-          <input type="text" id="full-name" name="full_name" class="form-control" required>
+          <input type="text" id="full-name" name="Full Name" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" class="form-control" required>
+          <input type="email" id="email" name="Email" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10,15}" required>
+          <input type="tel" id="phone" name="Phone" class="form-control" pattern="[0-9]{10,15}" required>
         </div>
 
         <div class="form-group">
           <label for="position">Position Applying For *</label>
-          <select id="position" name="position" class="form-control" required>
+          <select id="position" name="Position" class="form-control" required>
             <option value="" disabled selected>Select a position</option>
             <option value="Warehouse">Warehouse</option>
             <option value="Manufacturing">Manufacturing</option>
@@ -930,12 +933,12 @@
 
         <div class="form-group" id="other-position-container" style="display: none;">
           <label for="other-position">Please specify position</label>
-          <input type="text" id="other-position" name="other_position" class="form-control">
+          <input type="text" id="other-position" name="Other Position" class="form-control">
         </div>
 
         <div class="form-group">
           <label for="experience">Years of Relevant Experience *</label>
-          <select id="experience" name="experience" class="form-control" required>
+          <select id="experience" name="Experience" class="form-control" required>
             <option value="" disabled selected>Select experience level</option>
             <option value="No experience">No experience</option>
             <option value="1-2 years">1-2 years</option>
@@ -946,7 +949,7 @@
 
         <div class="form-group">
           <label for="availability">Availability *</label>
-          <select id="availability" name="availability" class="form-control" required>
+          <select id="availability" name="Availability" class="form-control" required>
             <option value="" disabled selected>Select availability</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
@@ -957,12 +960,12 @@
 
         <div class="form-group">
           <label for="skills">Key Skills & Qualifications *</label>
-          <textarea id="skills" name="skills" class="form-control" rows="4" required></textarea>
+          <textarea id="skills" name="Skills" class="form-control" rows="4" required></textarea>
         </div>
 
         <div class="form-group">
           <label for="references">Professional References (Name, Company, Contact)</label>
-          <textarea id="references" name="references" class="form-control" rows="3"></textarea>
+          <textarea id="references" name="References" class="form-control" rows="3"></textarea>
         </div>
 
         <div class="form-group" style="margin-top: 30px;">
@@ -1109,49 +1112,53 @@
 </footer>
 
 <!-- JavaScript -->
+    <script>
 // Form handling for job application
-const jobForm = document.getElementById('job-application-form');
-const positionSelect = document.getElementById('position');
-const otherPositionContainer = document.getElementById('other-position-container');
+document.addEventListener('DOMContentLoaded', function() {
+  const jobForm = document.getElementById('job-application-form');
+  const positionSelect = document.getElementById('position');
+  const otherPositionContainer = document.getElementById('other-position-container');
 
-// Toggle "Other" position field
-if (positionSelect && otherPositionContainer) {
-  positionSelect.addEventListener('change', function() {
-    otherPositionContainer.style.display = this.value === 'Other' ? 'block' : 'none';
-    if (this.value !== 'Other') {
-      document.getElementById('other-position').value = '';
-    }
-  });
-}
+  // Toggle "Other" position field
+  if (positionSelect && otherPositionContainer) {
+    positionSelect.addEventListener('change', function() {
+      otherPositionContainer.style.display = this.value === 'Other' ? 'block' : 'none';
+      if (this.value !== 'Other') {
+        document.getElementById('other-position').value = '';
+      }
+    });
+  }
 
-// Check for successful submission
-const urlParams = new URLSearchParams(window.location.search);
-const formStatus = document.getElementById('form-status');
+  // Check for successful submission
+  const urlParams = new URLSearchParams(window.location.search);
+  const formStatus = document.getElementById('form-status');
 
-if (urlParams.has('success') && urlParams.get('success') === 'true') {
-  formStatus.innerHTML = `
-    <div class="status-message success">
-      <h3>Application Submitted Successfully!</h3>
-      <p>Thank you for your application. We'll review your information and contact you soon.</p>
-    </div>
-  `;
-}
+  if (urlParams.has('success') && urlParams.get('success') === 'true') {
+    formStatus.innerHTML = `
+      <div class="status-message success">
+        <h3>Application Submitted Successfully!</h3>
+        <p>Thank you for your application. We'll review your information and contact you soon.</p>
+      </div>
+    `;
+    // Clear the success parameter from URL
+    window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+  }
 
-// Form submission handler
-if (jobForm) {
-  jobForm.addEventListener('submit', function(e) {
-    const submitBtn = document.getElementById('submit-btn');
-    const originalBtnText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    
-    // Clear previous status messages
-    formStatus.innerHTML = '<div class="status-message sending"><p>Submitting your application...</p></div>';
-    
-    // Let the form submit naturally to eForm.to
-  });
-}
+  // Form submission handler
+  if (jobForm) {
+    jobForm.addEventListener('submit', function(e) {
+      const submitBtn = document.getElementById('submit-btn');
+      const originalBtnText = submitBtn.innerHTML;
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      // Clear previous status messages
+      formStatus.innerHTML = '<div class="status-message sending"><p>Submitting your application...</p></div>';
+    });
+  }
+});
+</script>
 </body>
 </html>

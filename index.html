@@ -441,28 +441,29 @@
 
         /* Contact Section */
  /* ===== Contact Section - Side by Side ===== */
+/* ===== Contact Section - Side by Side ===== */
 .contact {
     background-color: var(--white);
 }
 
 .contact-container {
-    display: flex;           /* Flexbox for side-by-side layout */
-    gap: 40px;              /* Space between columns */
-    align-items: flex-start; /* Align to the top */
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-/* Left Column: Contact Info */
+/* Left Column: Contact Info (60% width) */
 .contact-info {
-    flex: 1;                /* Takes 50% width */
+    flex: 1.5; /* Takes more space */
     padding: 30px;
     background: var(--light-gray);
     border-radius: 8px;
     box-shadow: var(--box-shadow);
 }
 
-/* Right Column: Contact Form */
+/* Right Column: Contact Form (40% width) */
 .contact-form {
-    flex: 1;                /* Takes 50% width */
+    flex: 1; /* Takes less space */
     padding: 30px;
     background: var(--white);
     border-radius: 8px;
@@ -479,23 +480,30 @@
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    gap: 15px;              /* Space between icon and text */
+    gap: 15px;
 }
 
 .contact-details li i {
     color: var(--primary-red);
     font-size: 20px;
-    min-width: 25px;        /* Ensures icons align vertically */
+    min-width: 25px;
     text-align: center;
+}
+
+/* Make form inputs slightly narrower */
+.contact-form .form-control {
+    max-width: 100%; /* Allows natural narrowing */
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .contact-container {
-        flex-direction: column; /* Stack on mobile */
+        flex-direction: column;
     }
-}
-}
+    .contact-info,
+    .contact-form {
+        flex: 1 1 100%; /* Full width on mobile */
+    }
 
 .contact-details li div {
     flex: 1;

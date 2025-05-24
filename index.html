@@ -440,20 +440,20 @@
         }
 
         /* Contact Section */
- /* Contact Section - Side by Side Layout */
+ /* ===== Contact Section - Side by Side ===== */
 .contact {
     background-color: var(--white);
 }
 
 .contact-container {
-    display: flex;          /* Changed from grid to flex */
-    gap: 40px;             /* Space between columns */
-    align-items: flex-start; /* Align items to the top */
+    display: flex;           /* Flexbox for side-by-side layout */
+    gap: 40px;              /* Space between columns */
+    align-items: flex-start; /* Align to the top */
 }
 
 /* Left Column: Contact Info */
 .contact-info {
-    flex: 1;               /* Take up equal space */
+    flex: 1;                /* Takes 50% width */
     padding: 30px;
     background: var(--light-gray);
     border-radius: 8px;
@@ -462,14 +462,14 @@
 
 /* Right Column: Contact Form */
 .contact-form {
-    flex: 1;               /* Take up equal space */
+    flex: 1;                /* Takes 50% width */
     padding: 30px;
     background: var(--white);
     border-radius: 8px;
     box-shadow: var(--box-shadow);
 }
 
-/* Contact Details List */
+/* Contact Details List Styling */
 .contact-details {
     list-style: none;
     padding: 0;
@@ -479,23 +479,14 @@
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    gap: 15px;             /* Space between icon and text */
+    gap: 15px;              /* Space between icon and text */
 }
 
 .contact-details li i {
     color: var(--primary-red);
     font-size: 20px;
-    min-width: 25px;       /* Ensures icons align */
+    min-width: 25px;        /* Ensures icons align vertically */
     text-align: center;
-}
-
-.contact-details li div {
-    flex: 1;
-}
-
-.contact-details strong {
-    display: inline-block;
-    min-width: 60px;       /* Aligns labels like "Office:" */
 }
 
 /* Mobile Responsiveness */
@@ -503,6 +494,7 @@
     .contact-container {
         flex-direction: column; /* Stack on mobile */
     }
+}
 }
 
 .contact-details li div {

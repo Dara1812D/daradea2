@@ -440,41 +440,75 @@
         }
 
         /* Contact Section */
-        .contact {
-            background-color: var(--white);
-        }
+        /* Contact Section */
+.contact {
+    background-color: var(--white);
+}
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into two equal columns */
+    gap: 40px;
+    align-items: start; /* Align content to the top */
+}
 
-        .contact-info {
-            margin-bottom: 30px;
-        }
+/* Contact Info Box (Left Side) */
+.contact-info {
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
 
-        .contact-info h3 {
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
+.contact-info h3 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
 
-        .contact-details {
-            list-style: none;
-        }
+/* Contact Details List */
+.contact-details {
+    list-style: none;
+    padding: 0;
+}
 
-        .contact-details li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
+.contact-details li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
 
-        .contact-details li i {
-            color: var(--primary-red);
-            margin-right: 15px;
-            font-size: 20px;
-            margin-top: 3px;
-        }
+.contact-details li i {
+    color: var(--primary-red);
+    font-size: 20px;
+    min-width: 25px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.contact-details li div {
+    flex: 1;
+}
+
+.contact-details strong {
+    display: inline-block;
+    min-width: 60px; /* Aligns labels like "Office:" */
+}
+
+/* Contact Form (Right Side) */
+.contact-form {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+}
 
         /* Footer */
         footer {

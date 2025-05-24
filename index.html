@@ -1046,6 +1046,7 @@
     </section>
 
     <!-- Application Section -->
+        <!-- Application Section -->
     <section class="section application-form" id="application">
         <div class="container">
             <div class="section-title">
@@ -1069,7 +1070,7 @@
                 <form id="job-application-form" method="POST">
                     <input type="hidden" name="_subject" value="New Job Application - Dara Employment Agency">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://dara1812d.github.io/daradea2/#/thank-you.html">
+                    <input type="hidden" name="_next" value="https://dara1812d.github.io/daradea2/#application">
                     <input type="hidden" name="_captcha" value="false">
 
                     <div class="form-group">
@@ -1256,7 +1257,7 @@ Cell: (508) 797-2783<br>
     </footer>
 
     <!-- JavaScript -->
-    <script>
+   <script>
         // Mobile navigation toggle
         document.getElementById('navToggle').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
@@ -1267,6 +1268,18 @@ Cell: (508) 797-2783<br>
             const applicationForm = document.getElementById('job-application-form');
             const submitBtn = document.getElementById('submit-btn');
             const statusDiv = document.getElementById('form-status');
+
+            // Check for successful submission in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') && urlParams.get('success') === 'true') {
+                statusDiv.innerHTML = `
+                    <div class="status-message success">
+                        <h3>Application Submitted Successfully!</h3>
+                        <p>Thank you for your application. We'll contact you soon.</p>
+                    </div>`;
+                // Clear the URL parameter
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
 
             if (applicationForm && submitBtn && statusDiv) {
                 applicationForm.addEventListener('submit', async function(e) {
@@ -1301,12 +1314,14 @@ Cell: (508) 797-2783<br>
 
                         const result = await response.json();
 
-                        if (response.ok && result.success === "true") {
+                        if (response.ok) {
+                            // Show success message
                             statusDiv.innerHTML = `
                                 <div class="status-message success">
-                                    <h3>Application Submitted!</h3>
-                                    <p>Thank you for applying. We'll contact you soon.</p>
+                                    <h3>Application Submitted Successfully!</h3>
+                                    <p>Thank you for your application. We'll contact you soon.</p>
                                 </div>`;
+                            // Reset the form
                             applicationForm.reset();
                         } else {
                             throw new Error(result.message || 'Submission failed');
@@ -1316,8 +1331,7 @@ Cell: (508) 797-2783<br>
                         statusDiv.innerHTML = `
                             <div class="status-message error">
                                 <h3>Submission Error</h3>
-                                <p>Please email your application form directly to daradea0425@gmail.com</p>
-                                <p>Error: ${error.message}</p>
+                                <p>Please try again or email your application directly to daradea0425@gmail.com</p>
                             </div>`;
                     } finally {
                         submitBtn.disabled = false;

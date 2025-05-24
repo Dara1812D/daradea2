@@ -859,6 +859,43 @@
     margin: 0 auto;
     width: 100%;
 }
+
+/* Multi-line Typewriter Effect */
+.typewriter {
+  display: inline-block;
+  text-align: center;
+}
+
+.typewriter-line {
+  overflow: hidden;
+  display: block;
+  border-right: .15em solid var(--primary-red);
+  white-space: nowrap;
+  margin: 0 0 0.5em 0;
+  animation: 
+    typing 1.75s steps(20, end) forwards,
+    blink-caret .75s step-end 2.3333,
+    remove-caret 0.1s 1.8s forwards;
+}
+
+.typewriter-line:nth-child(2) {
+  animation-delay: 1.8s;
+  animation-fill-mode: both;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-red); }
+}
+
+@keyframes remove-caret {
+  to { border-right: none; }
+}
     </style>
 </head>
 <body>
@@ -878,7 +915,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Services</a></li
                     <li><a href="#positions">Positions</a></li>
                     <li><a href="#application">Apply Now</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -890,7 +927,10 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Strategic Staffing Solutions for Growing Businesses</h1>
+           <h1 class="typewriter">
+  <span class="typewriter-line">Strategic Staffing Solutions</span>
+  <span class="typewriter-line">for Businesses</span>
+</h1>
             <p>Dara Employment Agency connects top talent with leading companies through temporary staffing, direct hire, and comprehensive employer of record services.</p>
             <div class="hero-btns">
                 <a href="#application" class="btn">Apply for Jobs</a>

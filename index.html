@@ -582,6 +582,21 @@ max-width: 800px;
     .contact-container {
         grid-template-columns: 1fr; /* Stack on mobile */
     }}
+        @media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 120px 20px 80px;
+    }
+    
+    /* Optional: Stronger overlay on mobile */
+    .video-overlay {
+        background: rgba(0, 51, 160, 0.6);
+    }
+}
 
         /* Footer */
         footer {

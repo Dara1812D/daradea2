@@ -263,9 +263,6 @@
 
 
 
-
-
-
         
 
         .hero:before {
@@ -287,29 +284,106 @@
     padding: 0 20px;
 }
         }
+/* Video Background Hero Section */
+/* Video Background Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 0 100px; /* Keep your original padding */
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.3s forwards;
-            opacity: 0;
-        }
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeInUp 1s ease 0.6s forwards;
-            opacity: 0;
-        }
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 160, 0.6); /* Semi-transparent blue overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Keep your existing hero content styles */
+.hero h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 500px;
+        padding: 120px 0 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    /* Fallback if video doesn't load on mobile */
+    .video-background {
+        background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    }
+    
+    .video-background video {
+        display: none; /* Hide video on mobile if needed */
+    }
+}
 
         /* About Section */
         .about {
@@ -992,8 +1066,8 @@
     <div class="video-background">
         <video autoplay loop muted playsinline>
             <source src="7049943-hd_1920_1080_30fps.mp4" type="video/mp4">
-            <!-- Fallback image if video doesn't load -->
-            <img src="fallback-image.jpg" alt="Hero Background">
+            <!-- Fallback if video doesn't load -->
+            <img src="assets/images/hero-fallback.jpg" alt="Office Team Background">
         </video>
         <div class="video-overlay"></div>
     </div>
@@ -1010,7 +1084,7 @@
         </div>
     </div>
 </section>
-
+</section>
     <!-- Image Split Section -->
     <div class="image-split-section">
         <div class="image-container">

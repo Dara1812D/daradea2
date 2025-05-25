@@ -203,106 +203,55 @@
             width: 100%;
         }
 
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Video Background Hero Section */
-.hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    color: var(--white);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 80px 0 100px; /* Keep your original padding */
-}
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--white);
+            transform: skewY(-3deg);
+        }
 
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
 
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
 
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Keep your existing hero content styles */
-.hero h1 {
-    font-size: 3rem;
-    color: var(--white);
-    margin-bottom: 20px;
-    animation: fadeInDown 1s ease;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    animation: fadeInUp 1s ease 0.3s forwards;
-    opacity: 0;
-}
-
-.hero-btns {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    animation: fadeInUp 1s ease 0.6s forwards;
-    opacity: 0;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        min-height: 500px;
-        padding: 120px 0 60px;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    /* Fallback if video doesn't load on mobile */
-    .video-background {
-        background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-    }
-    
-    .video-background video {
-        display: none; /* Hide video on mobile if needed */
-    }
-}
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
 
         /* About Section */
         .about {
@@ -944,10 +893,6 @@
   50% { border-color: var(--primary-red); }
 }
 
-
-
-        
-
 @keyframes remove-caret {
   to { border-right: none; }
 }
@@ -980,30 +925,20 @@
     </header>
 
     <!-- Hero Section -->
-<!-- Hero Section with Video Background -->
-<section class="hero" id="home">
-    <div class="video-background">
-        <video autoplay loop muted playsinline>
-            <source src="7049943-hd_1920_1080_30fps.mp4" type="video/mp4">
-            <!-- Fallback if video doesn't load -->
-            <img src="assets/images/hero-fallback.jpg" alt="Office Team Background">
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-    
-    <div class="hero-content">
-        <h1 class="typewriter">
-            <span class="typewriter-line">Strategic Staffing Solutions</span>
-            <span class="typewriter-line">for Businesses</span>
-        </h1>
-        <p>Dara Employment Agency connects top talent with leading companies through temporary staffing, direct hire, and comprehensive employer of record services.</p>
-        <div class="hero-btns">
-            <a href="#application" class="btn">Apply for Jobs</a>
-            <a href="#contact" class="btn btn-outline">Contact Our Team</a>
+    <section class="hero" id="home">
+        <div class="hero-content">
+           <h1 class="typewriter">
+  <span class="typewriter-line">Strategic Staffing Solutions</span>
+  <span class="typewriter-line">for Businesses</span>
+</h1>
+            <p>Dara Employment Agency connects top talent with leading companies through temporary staffing, direct hire, and comprehensive employer of record services.</p>
+            <div class="hero-btns">
+                <a href="#application" class="btn">Apply for Jobs</a>
+                <a href="#contact" class="btn btn-outline">Contact Our Team</a>
+            </div>
         </div>
-    </div>
-</section>
-</section>
+    </section>
+
     <!-- Image Split Section -->
     <div class="image-split-section">
         <div class="image-container">
